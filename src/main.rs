@@ -15,8 +15,7 @@ fn main() {
 	const COMPUTER: char = 'O'; //symbol for the computer
 	
 	//create and intialize the game board
-    let mut game_board = Board {marks: [[' '; 3]; 3]}; //the tic-tac-toe board
-    let mut move_success = true; //tracks whether the user has made a successful move
+	let mut game_board = Board {marks: [[' '; 3]; 3]}; //the tic-tac-toe board
 	let mut game_over: u8 = 0; //tracks whether the game is over (0 - still going, 1 - player wins, 2 - computer wins)
 	let mut player_x: u16 = 0; //x coordinate for player moves
 	let mut player_y: u16 = 0; //y coordinate for player moves
@@ -58,7 +57,7 @@ fn main() {
 		user_move = String::new();
 
 		//make the player's move
-		move_success = make_move(&mut game_board, player_x, player_y, PLAYER);
+		let move_success = make_move(&mut game_board, player_x, player_y, PLAYER);
 
 		//check to see if it was a valid move, if not, restart the loop
 		if move_success == false {
