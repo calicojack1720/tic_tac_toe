@@ -3,7 +3,7 @@
   A friendly game of tic_tac_toe between a user and an automated opponent.
   Created by calicojack1720
   Created: 5/21/2024
-  Updated: 5/22/2024
+  Updated: 5/29/2024
 */
 
 use std::io;
@@ -122,57 +122,57 @@ fn computer_move(b: &mut Board, symbol: char) {
 
 //Precondition: takes a mutable reference to the board, a reference to the player character, and a reference to the computer character.
 //Postcondition: returns an unsigned 8-bit integer (0 for not win yet, 1 for player win, 2 for computer win, and 3 for a tie)
-fn check_win(b: &mut Board, P: &char, C: &char) -> u8 {
+fn check_win(b: &mut Board, p: &char, c: &char) -> u8 {
 
 	let mut result = 0;
 
 	//checking all the win conditions
 	if b.marks[0][0] == b.marks[0][1] && b.marks[0][0] == b.marks[0][2] {
-		if b.marks[0][0] == *P {
+		if b.marks[0][0] == *p {
 			result = 1;
-		} else if b.marks[0][0] == *C {
+		} else if b.marks[0][0] == *c {
 			result = 2
 		}
 	} else if b.marks[1][0] == b.marks[1][1] && b.marks[1][0] == b.marks[1][2] {
-		if b.marks[1][0] == *P {
+		if b.marks[1][0] == *p {
 			result = 1;
-		} else if b.marks[1][0] == *C {
+		} else if b.marks[1][0] == *c {
 			result = 2;
 		}
 	} else if b.marks[2][0] == b.marks[2][1] && b.marks[2][0] == b.marks[2][2] {
-		if b.marks[2][0] == *P {
+		if b.marks[2][0] == *p {
 			result = 1;
-		} else if b.marks[2][0] == *C {
+		} else if b.marks[2][0] == *c {
 			result = 2;
 		}
 	} else if b.marks[0][0] == b.marks[1][0] && b.marks[0][0] == b.marks[2][0] {
-		if b.marks[0][0] == *P {
+		if b.marks[0][0] == *p {
 			result = 1;
-		} else if b.marks[0][0] == *C {
+		} else if b.marks[0][0] == *c {
 			result = 2;
 		}
 	} else if b.marks[0][1] == b.marks[1][1] && b.marks[0][1] == b.marks[2][1] {
-		if b.marks[0][1] == *P {
+		if b.marks[0][1] == *p {
 			result = 1;
-		} else if b.marks[0][1] == *C {
+		} else if b.marks[0][1] == *c {
 			result = 2;
 		}
 	} else if b.marks[0][2] == b.marks[1][2] && b.marks[0][2] == b.marks[2][2] {
-		if b.marks[0][2] == *P {
+		if b.marks[0][2] == *p {
 			result = 1;
-		} else if b.marks[0][2] == *C {
+		} else if b.marks[0][2] == *c {
 			result = 2;
 		}
 	} else if b.marks[0][0] == b.marks[1][1] && b.marks[0][0] == b.marks[2][2] {
-		if b.marks[0][0] == *P {
+		if b.marks[0][0] == *p {
 			result = 1;
-		} else if b.marks[0][0] == *C {
+		} else if b.marks[0][0] == *c {
 			result = 2;
 		}
 	} else if b.marks[0][2] == b.marks[1][1] && b.marks[0][2] == b.marks[2][0] {
-		if b.marks[0][2] == *P {
+		if b.marks[0][2] == *p {
 			result = 1;
-		} else if b.marks[0][2] == *C {
+		} else if b.marks[0][2] == *c {
 			result = 2;
 		}
 	} else {
