@@ -177,9 +177,9 @@ fn check_win(b: &mut Board, p: &char, c: &char) -> u8 {
 	} else {
 		//checking for tie, else we return 0
 		let mut tie = true;
-		for i in 0..2 {
-			for j in 0..2 {
-				if b.marks[1][j] == ' ' {
+		for i in 0..3 {
+			for j in 0..3 {
+				if b.marks[i][j] == ' ' {
 					tie = false;
 				}
 			}
